@@ -41,6 +41,9 @@ function App() {
       setProvider(provider);
       const network = await provider.getNetwork();
 
+      console.log('test....')
+      console.log(network.chainId);
+
       const central = new ethers.Contract(config[network.chainId].central.address, CentralABI, signer);
       setCentral(central);
     }catch(error){

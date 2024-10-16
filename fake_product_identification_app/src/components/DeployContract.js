@@ -32,6 +32,8 @@ const DeployContract = ({account, central}) => {
             if(account){
                 setUpdateStatus("Validate the transaction through your wallet");
                 let transaction = await central.createSmartContract();
+
+                console.log(transaction)
                 setLoading(true);
                 await transaction.wait();
                 await fetchContractAddress();
